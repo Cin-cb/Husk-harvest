@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://vn3jqmmd5phw"]
+
+[sub_resource type="GDScript" id="GDScript_pklcf"]
+script/source = "extends BaseSpasePhisicObject
+
+class_name BaseSpaseWall
+
+@export var hp = 30
+
+var join : Joint2D
+
+func _ready() -> void:
+	mass += 50
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dt4y5"]
+size = Vector2(320, 320)
+
+[node name="BaseSpaseWall" type="RigidBody2D"]
+mass = 5.0
+can_sleep = false
+script = SubResource("GDScript_pklcf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(160, 160)
+shape = SubResource("RectangleShape2D_dt4y5")
+one_way_collision_margin = 7.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 320.0
+offset_bottom = 320.0
+color = Color(0.366595, 0.366595, 0.366595, 1)

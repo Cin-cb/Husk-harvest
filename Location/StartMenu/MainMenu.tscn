@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://dj6n51fh5ygx"]
+
+[ext_resource type="Script" path="res://Location/StartMenu/main_menu.gd" id="1_ri7wi"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ri7wi")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 453.0
+offset_top = 115.0
+offset_right = 643.0
+offset_bottom = 230.0
+text = "Host"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 272.0
+offset_right = 641.0
+offset_bottom = 358.0
+text = "Join"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(548, 316)
+zoom = Vector2(2, 2)
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 457.0
+offset_top = 367.0
+offset_right = 637.0
+offset_bottom = 398.0
+text = "127.0.0.1"
+placeholder_text = "IP"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

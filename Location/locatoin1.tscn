@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cj85hi2ftiuan"]
+
+[ext_resource type="Texture2D" uid="uid://b7gfkfkkujvbw" path="res://objects/debuggers/center.png" id="3_muv8d"]
+[ext_resource type="PackedScene" uid="uid://bsp6ttgxj85fl" path="res://objects/briks/wall/base_spase_wall.tscn" id="4_qtilv"]
+[ext_resource type="PackedScene" uid="uid://bxl65bu36k58n" path="res://pleers/player/player.tscn" id="5_tg0vk"]
+[ext_resource type="PackedScene" uid="uid://oph3r1mp3tuy" path="res://objects/NetworkCore/network_core.tscn" id="5_tmjnu"]
+
+[node name="Locatoin1" type="Node2D"]
+
+[node name="NetworkCore" parent="." instance=ExtResource("5_tmjnu")]
+unique_name_in_owner = true
+
+[node name="test" type="Node2D" parent="."]
+
+[node name="Center" type="Sprite2D" parent="."]
+position = Vector2(15, -25)
+texture = ExtResource("3_muv8d")
+
+[node name="BaseSpaseWall" parent="." instance=ExtResource("4_qtilv")]
+position = Vector2(-565, 66)
+
+[node name="RigidBody2D" parent="." instance=ExtResource("5_tg0vk")]
+position = Vector2(55, -102)
+
+[node name="BaseSpaseWall2" parent="." instance=ExtResource("4_qtilv")]
+position = Vector2(102, 190)

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsp6ttgxj85fl"]
+
+[ext_resource type="PackedScene" uid="uid://dxod5h2vmsqan" path="res://objects/briks/components/connector.tscn" id="1_hlvf3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7jw7"]
+size = Vector2(320, 320)
+
+[node name="BaseSpaseWall" type="RigidBody2D"]
+collision_layer = 7
+collision_mask = 4
+mass = 15.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 320.0
+offset_bottom = 320.0
+color = Color(0.497802, 0.469278, 0.481569, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(160, 160)
+shape = SubResource("RectangleShape2D_t7jw7")
+
+[node name="connector" parent="." instance=ExtResource("1_hlvf3")]

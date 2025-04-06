@@ -24,6 +24,10 @@ window/size/initial_position_type=0
 window/size/resizable=false
 window/size/extend_to_title=true
 
+[dotnet]
+
+project/assembly_name="Moth club"
+
 [input]
 
 Up={
